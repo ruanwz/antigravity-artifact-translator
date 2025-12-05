@@ -75,7 +75,10 @@ export function activate(context: vscode.ExtensionContext) {
             cancellable: false
         }, async (progress) => {
             try {
-                const translatedText = await translateText(text, 'zh-CN');
+                const config = vscode.workspace.getConfiguration('antigravity-artifact-translator');
+                const targetLang = config.get<string>('targetLanguage', 'zh-CN');
+
+                const translatedText = await translateText(text, targetLang);
 
                 // Update the provider with the new content
                 const uri = vscode.Uri.parse(`${TranslationContentProvider.scheme}:Translation.md`);

@@ -3,6 +3,11 @@
     "displayName": "Antigravity Artifact Translator",
     "description": "Translate artifact content to Chinese using Google Translate API",
     "version": "0.0.1",
+    "publisher": "DandR",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ruanwz/antigravity-artifact-translator"
+    },
     "engines": {
         "vscode": "^1.90.0"
     },
@@ -17,9 +22,43 @@
         "commands": [
             {
                 "command": "antigravity-translator.translateToChinese",
-                "title": "Translate Artifact to Chinese"
+                "title": "Translate Artifact"
             }
-        ]
+        ],
+        "configuration": {
+            "title": "Antigravity Artifact Translator",
+            "properties": {
+                "antigravity-artifact-translator.targetLanguage": {
+                    "type": "string",
+                    "default": "zh-CN",
+                    "description": "Target language for translation",
+                    "enum": [
+                        "zh-CN",
+                        "zh-TW",
+                        "en",
+                        "es",
+                        "fr",
+                        "de",
+                        "ja",
+                        "ko",
+                        "ru",
+                        "pt"
+                    ],
+                    "enumDescriptions": [
+                        "Chinese (Simplified)",
+                        "Chinese (Traditional)",
+                        "English",
+                        "Spanish",
+                        "French",
+                        "German",
+                        "Japanese",
+                        "Korean",
+                        "Russian",
+                        "Portuguese"
+                    ]
+                }
+            }
+        }
     },
     "scripts": {
         "vscode:prepublish": "npm run compile",

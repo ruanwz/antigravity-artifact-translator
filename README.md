@@ -1,30 +1,38 @@
 # Antigravity Artifact Translator
 
-这是一个为 Antigravity IDE (VS Code) 开发的插件，旨在帮助用户快速将 Artifact (文件或预览内容) 翻译成中文。
+This is an extension developed for Antigravity IDE (VS Code), designed to help users quickly translate Artifacts (files or preview content) into their preferred language (default is Chinese).
 
-## 功能特性
+## Features
 
-- **一键翻译**: 通过命令面板快速调用翻译功能。
-- **支持多种视图**: 不仅支持普通的文本编辑器，还支持 Markdown 预览等 Artifact 视图的翻译。
-- **即时预览**: 翻译结果直接在 Markdown 预览窗口中展示，无需保存文件，阅读体验更佳。
-- **免费 API**: 使用 Google Translate 免费 API，无需配置 Key。
+- **One-Click Translation**: Quickly invoke the translation function via the Command Palette.
+- **Multi-View Support**: Supports translation not only for standard text editors but also for Artifact views like Markdown previews.
+- **Instant Preview**: Translation results are displayed directly in a Markdown preview window for a better reading experience without needing to save files.
+- **Free API**: Uses the Google Translate free API, no API Key configuration required.
+- **Configurable Language**: Support for 10 common languages including English, Chinese (Simplified/Traditional), Spanish, French, etc.
 
-## 使用方法
+## Usage
 
-1.  打开任意文件或 Artifact 预览（如 Markdown 预览）。
-2.  打开命令面板 (`Cmd+Shift+P` 或 `Ctrl+Shift+P`)。
-3.  输入并选择命令: `Translate Artifact to Chinese`。
-4.  稍等片刻，翻译结果将会在右侧以 Markdown 预览的形式打开。
+1.  Open any file or Artifact preview (e.g., Markdown preview).
+2.  Open the Command Palette (`Cmd+Shift+P` or `Ctrl+Shift+P`).
+3.  Type and select the command: `Translate Artifact`.
+4.  Wait a moment, and the translation result will open in a Markdown preview on the side.
 
-## 安装
+## Configuration
 
-1.  下载 `.vsix` 安装包。
-2.  在 IDE 中打开命令面板。
-3.  选择 `Extensions: Install from VSIX...`。
-4.  选择下载的 `.vsix` 文件进行安装。
-5.  重启 IDE 或重载窗口。
+You can change the target language in VS Code Settings:
+- Go to Settings (`Cmd+,` or `Ctrl+,`).
+- Search for `Antigravity Artifact Translator`.
+- Select your preferred language from the `Target Language` dropdown.
 
-## 注意事项
+## Installation
 
-- 本插件使用非官方 Google Translate API，仅供学习和个人使用，可能会有速率限制。
-- 大文件会自动分块翻译，但过大的文件可能仍会处理较慢。
+1.  Download the `.vsix` package.
+2.  Open the Command Palette in the IDE.
+3.  Select `Extensions: Install from VSIX...`.
+4.  Choose the downloaded `.vsix` file to install.
+5.  Restart the IDE or reload the window.
+
+## Notes
+
+- This extension uses an unofficial Google Translate API for educational and personal use only; rate limits may apply.
+- Large files are automatically split into chunks for translation, but very large files may still take some time to process.
