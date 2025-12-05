@@ -1,0 +1,35 @@
+{
+    "name": "antigravity-artifact-translator",
+    "displayName": "Antigravity Artifact Translator",
+    "description": "Translate artifact content to Chinese using Google Translate API",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.90.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onCommand:antigravity-translator.translateToChinese"
+    ],
+    "main": "./out/extension.js",
+    "contributes": {
+        "commands": [
+            {
+                "command": "antigravity-translator.translateToChinese",
+                "title": "Translate Artifact to Chinese"
+            }
+        ]
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "build": "npm run compile",
+        "watch": "tsc -watch -p ./"
+    },
+    "devDependencies": {
+        "@types/vscode": "^1.90.0",
+        "@types/node": "^20.0.0",
+        "typescript": "^5.4.0"
+    }
+}
