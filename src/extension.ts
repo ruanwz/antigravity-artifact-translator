@@ -1,5 +1,6 @@
 import * as vscode from 'vscode';
-import { translateText } from './googleTranslate';
+import { translateText as googleTranslateText } from './googleTranslate';
+import { translateText as microsoftTranslateText } from './microsoftTranslate';
 
 export function activate(context: vscode.ExtensionContext) {
     console.log('Antigravity Artifact Translator is now active!');
@@ -77,8 +78,14 @@ export function activate(context: vscode.ExtensionContext) {
             try {
                 const config = vscode.workspace.getConfiguration('antigravity-artifact-translator');
                 const targetLang = config.get<string>('targetLanguage', 'zh-CN');
+                const service = config.get<string>('translationService', 'google');
 
-                const translatedText = await translateText(text, targetLang);
+                let translatedText = '';
+                if (service === 'microsoft') {
+                    translatedText = await microsoftTranslateText(text, targetLang);
+                } else {
+                    translatedText = await googleTranslateText(text, targetLang);
+                }
 
                 // Update the provider with the new content
                 const uri = vscode.Uri.parse(`${TranslationContentProvider.scheme}:Translation.md`);

@@ -2,7 +2,7 @@
     "name": "antigravity-artifact-translator",
     "displayName": "Antigravity Artifact Translator",
     "description": "Translate artifact content to Chinese using Google Translate API",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "publisher": "DandR",
     "repository": {
         "type": "git",
@@ -55,6 +55,19 @@
                         "Korean",
                         "Russian",
                         "Portuguese"
+                    ]
+                },
+                "antigravity-artifact-translator.translationService": {
+                    "type": "string",
+                    "default": "google",
+                    "description": "Translation service provider",
+                    "enum": [
+                        "google",
+                        "microsoft"
+                    ],
+                    "enumDescriptions": [
+                        "Google Translate",
+                        "Microsoft Translator (Edge)"
                     ]
                 }
             }
